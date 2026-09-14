@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; color-scheme: light; }
+body { @apply bg-paper text-ink antialiased; background-image: radial-gradient(circle at 10% 0%, rgba(31,93,76,.06), transparent 28rem); }
+a { @apply underline-offset-4; }
+* { box-sizing: border-box; }
+::selection { background: #DDEDE8; color: #123F33; }
+
+@layer components {
+  .surface { @apply rounded-2xl border border-line bg-white shadow-sm; }
+  .surface-hover { @apply transition duration-200 hover:-translate-y-0.5 hover:border-accent/30 hover:shadow-lg; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.16em] text-accent; }
+  .btn-primary { @apply inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-white no-underline shadow-sm transition hover:-translate-y-0.5 hover:bg-[#174A3C] hover:shadow-md; }
+  .btn-secondary { @apply inline-flex items-center justify-center rounded-xl border border-line bg-white px-5 py-3 text-sm font-semibold text-ink no-underline transition hover:-translate-y-0.5 hover:border-accent/40 hover:bg-accent-soft; }
+  .input-ui { @apply w-full rounded-xl border border-line bg-white px-4 py-3 text-sm outline-none transition placeholder:text-slate-400 focus:border-accent focus:ring-4 focus:ring-accent/10; }
+}

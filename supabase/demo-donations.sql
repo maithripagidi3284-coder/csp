@@ -1,0 +1,23 @@
+-- OPTIONAL: donor/payment demo guidance
+-- Do not run this file directly until you have signed up a real test account
+-- through the app (Supabase Auth). The donors.id column must match auth.users.id.
+-- After signup, use Supabase Table Editor or a service-role script to add
+-- test donation rows for that authenticated donor.
+--
+-- Recommended test amounts: 500, 1000, 2500, 5000 INR.
+-- Recommended statuses: paid, pending, failed, refunded.
+--
+-- Example after replacing the placeholder UUIDs with real IDs from your
+-- Supabase project:
+--
+-- insert into donors (id, email, phone, full_name)
+-- values ('AUTH-USER-UUID', 'demo@example.com', '+919900000000', 'Demo Donor')
+-- on conflict (id) do update set full_name = excluded.full_name;
+--
+-- insert into donations (donor_id, initiative_id, amount, currency, status,
+--                        razorpay_order_id, razorpay_payment_id, receipt_number)
+-- values
+--   ('AUTH-USER-UUID', '10000000-0000-0000-0000-000000000001', 2500, 'INR', 'paid',
+--    'demo_order_001', 'demo_payment_001', 'CSP-DEMO-0001'),
+--   ('AUTH-USER-UUID', '10000000-0000-0000-0000-000000000002', 1000, 'INR', 'paid',
+--    'demo_order_002', 'demo_payment_002', 'CSP-DEMO-0002');
