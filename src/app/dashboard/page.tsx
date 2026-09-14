@@ -34,7 +34,7 @@ export default async function DashboardPage() {
 
   return (
     <div className="pb-10">
-      <div className="surface flex flex-wrap items-center justify-between gap-4 p-6 sm:p-7"> justify-between">
+      <div className="surface flex flex-wrap items-center justify-between gap-4 p-6 sm:p-7">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Your dashboard</h1>
           <p className="mt-1 text-sm text-muted">{user.email ?? user.phone}</p>
